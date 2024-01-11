@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Get the permissions of olleh
+olleh_permissions=$(stat -c %a olleh)
+
+# Apply the permissions to hello
+chmod $olleh_permissions hello
+
