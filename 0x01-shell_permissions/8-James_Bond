@@ -1,5 +1,3 @@
 #!/bin/bash
-
-# Set permissions to the file hello as specified
+touch hello
 chmod u=,g=,o=rwx hello
-
