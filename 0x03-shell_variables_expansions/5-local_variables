@@ -1,2 +1,17 @@
 #!/bin/bash
-Set
+
+echo "Local Variables:"
+echo "-----------------"
+# Using declare to list local variables
+declare -l | grep -E '^[a-zA-Z_]+='
+
+echo -e "\nEnvironment Variables:"
+echo "-----------------------"
+# Using printenv to list environment variables
+printenv
+
+echo -e "\nFunctions:"
+echo "-----------"
+# Using declare to list functions
+declare -F | awk '{print $3}'
+
