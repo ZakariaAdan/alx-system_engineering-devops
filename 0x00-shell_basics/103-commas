@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a1 --format=comma | sed 's/,$//' | sed 's/^\(.*\)\//\1\//'
+ls -1ap | sed '$!s/$/,/' | sed 's/^\(.*\)\//\1\//' | tr -d '\n' && echo
