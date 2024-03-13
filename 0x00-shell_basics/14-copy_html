@@ -1,12 +1,2 @@
 #!/bin/bash
-
-# Check if there are HTML files in the current directory
-if ls *.html 1> /dev/null 2>&1; then
-    # Change directory to the parent of the current working directory
-    cd ..
-
-    # Copy all HTML files from the current working directory to the parent directory
-    cp -u 0x00-shell_basics/*.html .
-else
-    echo "No HTML files found in the current directory."
-fi
+cp -u *.html ..
