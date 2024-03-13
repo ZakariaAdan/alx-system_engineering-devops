@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Copy HTML files from the current working directory to the parent directory
-# Only copy files that do not exist in the parent directory or are newer
+# Check if there are HTML files in the current directory
+if ls *.html 1> /dev/null 2>&1; then
+    # Change directory to the parent of the current working directory
+    cd ..
 
-# Set the source and destination directories
-source_dir=$(pwd)
-destination_dir=$(dirname "$source_dir")
-
-# Copy HTML files
-find "$source_dir" -maxdepth 1 -type f -name "*.html" -exec cp --update -t "$destination_dir" {} \;
-
+    # Copy all HTML files from the current working directory to the parent directory
+    cp -u 0x00-shell_basics/*.html .
+else
+    echo "No HTML files found in the current directory."
+fi
