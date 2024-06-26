@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+netstart -l-p
