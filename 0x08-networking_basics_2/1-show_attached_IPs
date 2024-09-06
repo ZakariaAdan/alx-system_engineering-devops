@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # This script displays all active IPv4 IPs on the machine
 
-# Use the `ifconfig` command to list IP addresses and filter out the relevant lines
-ifconfig | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+# Use the `hostname` command to list IP addresses and filter out the relevant lines
+hostname -I | awk '{print $1}'
